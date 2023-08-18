@@ -49,6 +49,7 @@ func buildResponse(res *http.Response, err error) (*Response, error) {
 		RawResponse:        res,
 		StatusCode:         res.StatusCode,
 		Header:             res.Header,
+		Body:               res.Body,
 		internalByteBuffer: bytes.NewBuffer([]byte{}),
 	}
 	// EnsureResponseFinalized(goodResp) This will come back in 1.0
